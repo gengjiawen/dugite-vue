@@ -1,6 +1,20 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import {app, BrowserWindow, Menu} from 'electron'
+import {menu} from './menu'
+
+// Install `electron-debug` with `devtron`
+require('electron-debug')({ showDevTools: true })
+
+// Install `vue-devtools`
+require('electron').app.on('ready', () => {
+  let installExtension = require('electron-devtools-installer')
+  installExtension.default(installExtension.VUEJS_DEVTOOLS)
+    .then(() => {})
+    .catch(err => {
+      console.log('Unable to install `vue-devtools`: \n', err)
+    })
+})
 
 /**
  * Set `__static` path to static files in production
@@ -26,6 +40,8 @@ function createWindow () {
   })
 
   mainWindow.loadURL(winURL)
+
+  Menu.setApplicationMenu(menu)
 
   mainWindow.on('closed', () => {
     mainWindow = null
