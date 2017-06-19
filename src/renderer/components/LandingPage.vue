@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  /* eslint-disable no-new */
   import SystemInformation from './LandingPage/SystemInformation'
   import {GitProcess} from 'dugite'
   import os from 'os'
@@ -18,16 +19,19 @@
         const desDir = os.tmpdir() + Date.now()
         console.log(desDir)
         fs.ensureDirSync(desDir)
+        new Notification('Start', {body: 'Clone Start.'})
         GitProcess.exec(['clone', 'https://github.com/desktop/dugite', desDir])
           .then(result => {
             console.log('response')
             if (result.exitCode === 0) {
               console.log('congratulations')
+              new Notification('Congratulations', {body: 'Clone Complete.'})
               const output = result.stdout
               console.log(output)
             } else {
               const error = result.stderr
               console.log(error)
+              new Notification('Error', {body: `Clone Error: ${error}.`})
             }
           })
           .catch(e => {
