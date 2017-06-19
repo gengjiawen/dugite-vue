@@ -119,10 +119,10 @@ if (process.env.NODE_ENV === 'production') {
   webConfig.devtool = ''
 
   webConfig.plugins.push(
-    new BabiliWebpackPlugin({
-      removeConsole: true,
-      removeDebugger: true
-    }),
+    // new BabiliWebpackPlugin({
+    //   removeConsole: true,
+    //   removeDebugger: true
+    // }),
     new CopyWebpackPlugin([
       {
         from: path.join(__dirname, '../static'),
@@ -133,9 +133,9 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
+    // new webpack.LoaderOptionsPlugin({
+    //   minimize: true
+    // })
   )
 }
 
