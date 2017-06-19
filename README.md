@@ -1,5 +1,7 @@
 # dugite-vue
 
+[![Build Status](https://travis-ci.org/gengjiawen/dugite-vue.svg?branch=master)](https://travis-ci.org/gengjiawen/dugite-vue)
+
 > An electron-vue project
 
 #### Build Setup
@@ -26,3 +28,5 @@ npm run lint
 ---
 
 This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[bda8d83](https://github.com/SimulatedGREG/electron-vue/tree/bda8d832f8d992bfac490fa6702aff3f51759ca4) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+
+
