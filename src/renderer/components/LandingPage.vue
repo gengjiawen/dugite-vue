@@ -18,7 +18,8 @@
         const desDir = os.tmpdir() + Date.now()
         console.log(desDir)
         fs.ensureDirSync(desDir)
-        GitProcess.exec(['clone', 'https://github.com/desktop/dugite', desDir])
+        const args = ['clone', '--', 'https://github.com/desktop/dugite', desDir]
+        GitProcess.exec(args, __dirname)
           .then(result => {
             console.log('response')
             if (result.exitCode === 0) {
