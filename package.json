@@ -58,6 +58,8 @@
     }
   },
   "dependencies": {
+    "dugite": "^1.35.0",
+    "fs-extra": "^3.0.1",
     "vue": "^2.3.3",
     "axios": "^0.16.1",
     "vue-electron": "^1.0.6",
