@@ -26,6 +26,7 @@
   "build": {
     "productName": "dugite-vue",
     "appId": "org.simulatedgreg.electron-vue",
+    "asar": false,
     "directories": {
       "output": "build"
     },
